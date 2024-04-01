@@ -901,10 +901,11 @@
       ["comedian", "107px"],
       ["student", "84px"],
       ["writer", "63px"],
-      ["cube coach", "126px"]
+      ["cube coach", "126px"],
+      ["tutor", "53px"]
     ];
 
-    var currentItem = Math.floor(Math.random() * 4);
+    var currentItem = Math.floor(Math.random() * abilities.length);
 
     document.getElementById("elemOne").innerHTML = abilities[(currentItem - 1 + 4) % 4][0];
     document.getElementById("elemTwo").innerHTML = abilities[currentItem][0];
@@ -919,7 +920,7 @@
       }
 
       var oldItem = currentItem;
-      currentItem = (currentItem + 1) % 4;
+      currentItem = (currentItem + 1) % abilities.length;
 
       document.getElementById("elemOne").innerHTML = abilities[oldItem][0];
       document.getElementById("elemTwo").innerHTML = abilities[currentItem][0];
@@ -943,7 +944,7 @@
       });
     }
 
-    setInterval(changeDescriptor, 3000);
+    setInterval(changeDescriptor, 1500);
   </script>
 
 </body>
